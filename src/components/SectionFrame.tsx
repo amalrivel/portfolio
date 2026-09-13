@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Separator } from "@/components/ui/separator";
 import { Label } from "./Label";
 
 export function SectionFrame({
@@ -12,7 +13,7 @@ export function SectionFrame({
     <section className="min-w-0 lg:pt-4">
       <div className="hidden items-center gap-4 lg:flex">
         <Label>{label}</Label>
-        <span className="h-px flex-1 bg-slate-300" aria-hidden="true" />
+        <Separator className="flex-1 bg-slate-300" />
       </div>
       <div className="min-w-0 lg:mt-10">{children}</div>
     </section>

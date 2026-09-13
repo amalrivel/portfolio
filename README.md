@@ -1,12 +1,32 @@
-# Amalrivel Portfolio
+# AMALRIVEL Portfolio
 
-Personal developer portfolio built with Vite, React, TypeScript, Tailwind CSS, and Motion.
+Personal developer portfolio for Ikhlas.
+
+An editorial workspace-style interface with responsive navigation, keyboard focus states, semantic content, and reduced-motion support.
+
+## Stack
+
+- React
+- TypeScript
+- Vite
+- Tailwind CSS
+- shadcn
+- Motion
 
 ## Development
 
 ```bash
 bun install
-bun run dev
+bun dev
 ```
 
-Build and lint with `bun run build` and `bun run lint`.
+## Build
+
+```bash
+bun run lint
+bun run build
+```
+
+Vite produces a static `dist/` directory. Deployment target: AWS static hosting, with `index.html` as the root document. Sections use URL hashes and need no server routes.
+
+Production domain: https://amalrivel.com

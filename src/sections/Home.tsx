@@ -1,5 +1,6 @@
 import { Label } from "../components/Label";
 import { SectionFrame } from "../components/SectionFrame";
+import { Button } from "@/components/ui/button";
 import { profile } from "../data/profile";
 
 export function Home({ navigate }: { navigate: (id: string) => void }) {
@@ -25,24 +26,21 @@ export function Home({ navigate }: { navigate: (id: string) => void }) {
             I build practical software for real problems.
           </p>
           <div className="mt-10 flex flex-wrap gap-5 font-mono text-[10px] uppercase tracking-widest">
-            <button
-              className="border border-slate-900 bg-slate-900 px-5 py-3 text-white hover:bg-transparent hover:text-slate-900"
+            <Button
+              variant="editorial-primary"
               onClick={() => navigate("work")}
             >
               Explore work ↘
-            </button>
-            <button
-              className="border-b border-slate-400 px-1 py-3 hover:border-slate-900"
-              onClick={() => navigate("about")}
-            >
+            </Button>
+            <Button variant="editorial-text" onClick={() => navigate("about")}>
               About ↘
-            </button>
-            <button
-              className="border-b border-slate-400 px-1 py-3 hover:border-slate-900"
+            </Button>
+            <Button
+              variant="editorial-text"
               onClick={() => navigate("contact")}
             >
               Contact ↘
-            </button>
+            </Button>
           </div>
         </div>
         <div className="border-l border-slate-300 pl-5 lg:mt-10">

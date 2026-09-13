@@ -1,4 +1,7 @@
 import { motion } from "motion/react";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
+import { cn } from "@/lib/utils";
 import { profile } from "../data/profile";
 
 export type NavigationSection = { number: string; label: string; id: string };
@@ -16,13 +19,14 @@ export function Sidebar({
     <aside className="workspace-sidebar border-slate-300 px-5 py-5 sm:px-8 sm:py-7">
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between">
-          <button
-            className="min-h-11 font-mono text-sm font-bold tracking-[0.2em]"
+          <Button
+            variant="editorial-nav"
+            className="font-bold text-slate-900 tracking-[0.2em]"
             onClick={() => navigate("home")}
             aria-label="Go to Home"
           >
             {profile.brand}
-          </button>
+          </Button>
           <span className="font-mono text-[10px] text-slate-600">
             {profile.year}
           </span>
@@ -38,14 +42,14 @@ export function Sidebar({
           className="workspace-nav mt-auto hidden lg:block"
           aria-label="Main navigation"
         >
-          <div className="space-y-4">
+          <div className="flex flex-col gap-4">
             {sections.map((section) => (
-              <button
-                className={
-                  activeId === section.id
-                    ? "group relative flex min-h-11 w-full items-center gap-3 text-left font-mono text-xs uppercase tracking-widest text-slate-900"
-                    : "group relative flex min-h-11 w-full items-center gap-3 text-left font-mono text-xs uppercase tracking-widest text-slate-600 hover:text-slate-900"
-                }
+              <Button
+                variant="editorial-nav"
+                className={cn(
+                  "group relative w-full gap-3 text-left",
+                  activeId === section.id && "text-slate-900",
+                )}
                 aria-current={activeId === section.id ? "page" : undefined}
                 onClick={() => navigate(section.id)}
                 key={section.id}
@@ -59,22 +63,25 @@ export function Sidebar({
                     transition={{ duration: 0.2 }}
                   />
                 )}
-              </button>
+              </Button>
             ))}
           </div>
         </nav>
-        <div className="mt-8 hidden items-center justify-between border-t border-slate-300 pt-2 font-mono text-[10px] uppercase tracking-widest text-slate-600 lg:flex">
-          <a
-            className="flex min-h-11 items-center hover:text-slate-900"
-            href={profile.links.github}
-            target="_blank"
-            rel="noreferrer"
-          >
-            GitHub <span className="sr-only">(opens in a new tab)</span>↗
-          </a>
-          <span>
-            {profile.location} · {profile.year}
-          </span>
+        <div className="mt-8 hidden lg:block">
+          <Separator className="bg-slate-300" />
+          <div className="flex items-center justify-between pt-2 font-mono text-[10px] uppercase tracking-widest text-slate-600">
+            <a
+              className="flex min-h-11 items-center hover:text-slate-900"
+              href={profile.links.github}
+              target="_blank"
+              rel="noreferrer"
+            >
+              GitHub <span className="sr-only">(opens in a new tab)</span>↗
+            </a>
+            <span>
+              {profile.location} · {profile.year}
+            </span>
+          </div>
         </div>
       </div>
     </aside>
