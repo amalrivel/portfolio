@@ -10,7 +10,10 @@ const skillGroups = [
 export function Stack() {
   return (
     <SectionFrame label="03 / Stack">
-      <h1 id="stack-title" className="text-4xl font-semibold uppercase leading-none tracking-[-0.06em] sm:text-5xl">
+      <h1
+        id="stack-title"
+        className="text-4xl font-semibold uppercase leading-none tracking-[-0.06em] sm:text-5xl"
+      >
         Current toolkit.
       </h1>
       <p className="mt-6 max-w-lg text-base leading-7 text-slate-600">

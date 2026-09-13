@@ -23,7 +23,9 @@ export function Sidebar({
           >
             {profile.brand}
           </button>
-          <span className="font-mono text-[10px] text-slate-600">{profile.year}</span>
+          <span className="font-mono text-[10px] text-slate-600">
+            {profile.year}
+          </span>
         </div>
         <div className="mt-16 hidden lg:block">
           <p className="font-mono text-xs leading-5 text-slate-600">
@@ -70,7 +72,9 @@ export function Sidebar({
           >
             GitHub <span className="sr-only">(opens in a new tab)</span>↗
           </a>
-          <span>{profile.location} · {profile.year}</span>
+          <span>
+            {profile.location} · {profile.year}
+          </span>
         </div>
       </div>
     </aside>

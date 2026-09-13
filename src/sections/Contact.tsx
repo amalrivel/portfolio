@@ -4,7 +4,10 @@ import { profile } from "../data/profile";
 export function Contact() {
   return (
     <SectionFrame label="04 / Contact">
-      <h1 id="contact-title" className="text-[clamp(3rem,10vw,4.5rem)] font-semibold leading-[0.9] tracking-[-0.08em]">
+      <h1
+        id="contact-title"
+        className="text-[clamp(3rem,10vw,4.5rem)] font-semibold leading-[0.9] tracking-[-0.08em]"
+      >
         Let’s build
         <br />
         <em className="font-serif font-normal">something useful.</em>

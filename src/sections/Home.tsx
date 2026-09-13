@@ -10,11 +10,16 @@ export function Home({ navigate }: { navigate: (id: string) => void }) {
           <p className="mb-5 font-mono text-sm uppercase tracking-widest text-slate-600">
             I'm
           </p>
-          <h1 id="home-title" className="max-w-3xl text-[clamp(4.5rem,14vw,8rem)] font-semibold uppercase leading-[0.86] tracking-[-0.09em]">
+          <h1
+            id="home-title"
+            className="home-identity max-w-3xl text-[clamp(4.5rem,9.5vw,8rem)] font-semibold uppercase leading-[0.86] tracking-[-0.09em]"
+          >
             {profile.displayName}
           </h1>
           <p className="mt-7 text-2xl font-medium tracking-[-0.04em] sm:text-4xl">
-            {profile.role}<br />based in {profile.location}.
+            {profile.role}
+            <br />
+            based in {profile.location}.
           </p>
           <p className="mt-7 max-w-md text-base leading-7 text-slate-600 sm:text-lg">
             I build practical software for real problems.
@@ -42,7 +47,9 @@ export function Home({ navigate }: { navigate: (id: string) => void }) {
         </div>
         <div className="border-l border-slate-300 pl-5 lg:mt-10">
           <Label>Currently building</Label>
-          <p className="mt-5 text-4xl font-semibold tracking-tight">● {profile.currentlyBuilding}</p>
+          <p className="mt-5 text-4xl font-semibold tracking-tight">
+            ● {profile.currentlyBuilding}
+          </p>
           <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-slate-600">
             LMS · React · Express · PostgreSQL
           </p>

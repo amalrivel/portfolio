@@ -14,6 +14,7 @@ export function MobileHeader({
   const [open, setOpen] = useState(false);
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const activeSection = sections.find((section) => section.id === activeId);
+
   const select = (id: string) => {
     setOpen(false);
     navigate(id);

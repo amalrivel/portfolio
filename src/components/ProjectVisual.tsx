@@ -1,6 +1,20 @@
-export function ProjectVisual({ number, screenshot }: { number: string; screenshot?: { src: string; alt: string } }) {
+export function ProjectVisual({
+  number,
+  screenshot,
+}: {
+  number: string;
+  screenshot?: { src: string; alt: string };
+}) {
   if (screenshot) {
-    return <div className="relative mt-8 min-h-56 overflow-hidden border border-slate-300 bg-[#e9e7e0] sm:min-h-72"><img className="absolute inset-0 size-full object-cover" src={screenshot.src} alt={screenshot.alt} /></div>
+    return (
+      <div className="relative mt-8 min-h-56 overflow-hidden border border-slate-300 bg-[#e9e7e0] sm:min-h-72">
+        <img
+          className="absolute inset-0 size-full object-cover"
+          src={screenshot.src}
+          alt={screenshot.alt}
+        />
+      </div>
+    );
   }
 
   return (

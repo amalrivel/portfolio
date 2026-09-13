@@ -27,6 +27,7 @@ export function PortfolioShell({
     <div className="workspace-shell min-h-dvh bg-[#f8f7f2] text-[#1c2528]">
       <Sidebar sections={sections} activeId={activeId} navigate={navigate} />
       <MobileHeader
+        key={activeId}
         sections={sections}
         activeId={activeId}
         navigate={navigate}

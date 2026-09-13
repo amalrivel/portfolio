@@ -11,4 +11,4 @@ export const profile = {
     email: "amalrivel@gmail.com",
     github: "https://github.com/amalrivel",
   },
-}
+};
