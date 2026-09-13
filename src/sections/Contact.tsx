@@ -1,16 +1,15 @@
-import { Label } from "../components/Label";
+import { SectionFrame } from "../components/SectionFrame";
 import { profile } from "../data/profile";
 
 export function Contact() {
   return (
-    <section className="pt-4">
-      <Label>04 / Contact</Label>
-      <h2 className="mt-12 text-6xl font-semibold leading-[0.9] tracking-[-0.08em] sm:text-7xl">
+    <SectionFrame label="04 / Contact">
+      <h1 id="contact-title" className="text-[clamp(3rem,10vw,4.5rem)] font-semibold leading-[0.9] tracking-[-0.08em]">
         Let’s build
         <br />
         <em className="font-serif font-normal">something useful.</em>
-      </h2>
-      <p className="mt-8 max-w-md text-base leading-7 text-slate-500">
+      </h1>
+      <p className="mt-8 max-w-md text-base leading-7 text-slate-600">
         Open to conversations about software, projects, and opportunities.
       </p>
       <div className="mt-10 flex flex-wrap gap-7 font-mono text-[10px] uppercase tracking-widest">
@@ -26,9 +25,9 @@ export function Contact() {
           target="_blank"
           rel="noreferrer"
         >
-          GitHub ↗
+          GitHub <span className="sr-only">(opens in a new tab)</span>↗
         </a>
       </div>
-    </section>
+    </SectionFrame>
   );
 }

@@ -12,7 +12,7 @@ export function ProjectVisual({ number, screenshot }: { number: string; screensh
             <i className="size-2 rounded-full bg-slate-300" />
             <i className="size-2 rounded-full bg-slate-200" />
           </div>
-          <span className="font-mono text-[10px] text-slate-500">
+          <span className="font-mono text-[10px] text-slate-600">
             case-study/{number}
           </span>
         </div>

@@ -1,4 +1,4 @@
-import { Label } from "../components/Label";
+import { SectionFrame } from "../components/SectionFrame";
 
 const skillGroups = [
   ["Frontend", "React · TypeScript · Tailwind"],
@@ -9,12 +9,11 @@ const skillGroups = [
 
 export function Stack() {
   return (
-    <section className="pt-4">
-      <Label>03 / Stack</Label>
-      <h1 className="mt-10 text-4xl font-semibold uppercase leading-none tracking-[-0.06em] sm:text-5xl">
+    <SectionFrame label="03 / Stack">
+      <h1 id="stack-title" className="text-4xl font-semibold uppercase leading-none tracking-[-0.06em] sm:text-5xl">
         Current toolkit.
       </h1>
-      <p className="mt-6 max-w-lg text-base leading-7 text-slate-500">
+      <p className="mt-6 max-w-lg text-base leading-7 text-slate-600">
         Tools I currently use to design, build, and ship web applications.
       </p>
       <div className="mt-14 max-w-3xl">
@@ -23,13 +22,13 @@ export function Stack() {
             className="grid grid-cols-[0.8fr_1.2fr] border-b border-slate-300 py-5 first:border-t"
             key={name}
           >
-            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-500">
+            <span className="font-mono text-[10px] uppercase tracking-widest text-slate-600">
               {name}
             </span>
             <span className="text-sm sm:text-base">{list}</span>
           </div>
         ))}
       </div>
-    </section>
+    </SectionFrame>
   );
 }

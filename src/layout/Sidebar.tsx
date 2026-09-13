@@ -17,15 +17,16 @@ export function Sidebar({
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between">
           <button
-            className="font-mono text-sm font-bold tracking-[0.2em]"
+            className="min-h-11 font-mono text-sm font-bold tracking-[0.2em]"
             onClick={() => navigate("home")}
+            aria-label="Go to Home"
           >
             {profile.brand}
           </button>
-          <span className="font-mono text-[10px] text-slate-400">{profile.year}</span>
+          <span className="font-mono text-[10px] text-slate-600">{profile.year}</span>
         </div>
         <div className="mt-16 hidden lg:block">
-          <p className="font-mono text-xs leading-5 text-slate-500">
+          <p className="font-mono text-xs leading-5 text-slate-600">
             ● Building
             <br />
             <span className="pl-3">{profile.currentlyBuilding}</span>
@@ -40,13 +41,14 @@ export function Sidebar({
               <button
                 className={
                   activeId === section.id
-                    ? "group relative flex w-full items-center gap-3 text-left font-mono text-xs uppercase tracking-widest text-slate-900"
-                    : "group relative flex w-full items-center gap-3 text-left font-mono text-xs uppercase tracking-widest text-slate-500 hover:text-slate-900"
+                    ? "group relative flex min-h-11 w-full items-center gap-3 text-left font-mono text-xs uppercase tracking-widest text-slate-900"
+                    : "group relative flex min-h-11 w-full items-center gap-3 text-left font-mono text-xs uppercase tracking-widest text-slate-600 hover:text-slate-900"
                 }
+                aria-current={activeId === section.id ? "page" : undefined}
                 onClick={() => navigate(section.id)}
                 key={section.id}
               >
-                <span className="text-slate-400">{section.number}</span>
+                <span className="text-slate-600">{section.number}</span>
                 {section.label}
                 {activeId === section.id && (
                   <motion.span
@@ -59,14 +61,14 @@ export function Sidebar({
             ))}
           </div>
         </nav>
-        <div className="mt-8 hidden justify-between border-t border-slate-300 pt-4 font-mono text-[10px] uppercase tracking-widest text-slate-500 lg:flex">
+        <div className="mt-8 hidden items-center justify-between border-t border-slate-300 pt-2 font-mono text-[10px] uppercase tracking-widest text-slate-600 lg:flex">
           <a
-            className="hover:text-slate-900"
+            className="flex min-h-11 items-center hover:text-slate-900"
             href={profile.links.github}
             target="_blank"
             rel="noreferrer"
           >
-            GitHub ↗
+            GitHub <span className="sr-only">(opens in a new tab)</span>↗
           </a>
           <span>{profile.location} · {profile.year}</span>
         </div>

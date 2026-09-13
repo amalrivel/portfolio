@@ -31,15 +31,23 @@ export function PortfolioShell({
         activeId={activeId}
         navigate={navigate}
       />
-      <main className="workspace-main" ref={workspaceRef}>
+      <main
+        className="workspace-main"
+        ref={workspaceRef}
+        tabIndex={-1}
+        aria-labelledby={`${activeId}-title`}
+      >
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            className="workspace-screen px-5 py-8 sm:px-8 sm:py-10"
+            className="workspace-screen mx-auto min-w-0 w-full max-w-[1200px] px-5 py-8 sm:px-8 sm:py-10"
             key={activeId}
             initial={{ opacity: 0, y: reduceMotion ? 0 : 8 }}
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: reduceMotion ? 0 : -8 }}
             transition={{ duration: reduceMotion ? 0 : 0.2 }}
+            onAnimationComplete={() =>
+              workspaceRef.current?.focus({ preventScroll: true })
+            }
           >
             {children}
           </motion.div>
