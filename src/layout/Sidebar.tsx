@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Label } from "../components/Label";
+import { profile } from "../data/profile";
 
 export type NavigationSection = { number: string; label: string; id: string };
 
@@ -20,19 +20,15 @@ export function Sidebar({
             className="font-mono text-sm font-bold tracking-[0.2em]"
             onClick={() => navigate("home")}
           >
-            AMALRIVEL
+            {profile.brand}
           </button>
-          <span className="font-mono text-[10px] text-slate-400">2026</span>
+          <span className="font-mono text-[10px] text-slate-400">{profile.year}</span>
         </div>
         <div className="mt-16 hidden lg:block">
-          <Label>Software</Label>
-          <h1 className="mt-3 text-5xl font-semibold leading-[0.9] tracking-[-0.08em]">
-            Developer.
-          </h1>
-          <p className="mt-8 font-mono text-xs leading-5 text-slate-500">
+          <p className="font-mono text-xs leading-5 text-slate-500">
             ● Building
             <br />
-            <span className="pl-3">Genshu</span>
+            <span className="pl-3">{profile.currentlyBuilding}</span>
           </p>
         </div>
         <nav
@@ -66,13 +62,13 @@ export function Sidebar({
         <div className="mt-8 hidden justify-between border-t border-slate-300 pt-4 font-mono text-[10px] uppercase tracking-widest text-slate-500 lg:flex">
           <a
             className="hover:text-slate-900"
-            href="https://github.com/amalrivel"
+            href={profile.links.github}
             target="_blank"
             rel="noreferrer"
           >
             GitHub ↗
           </a>
-          <span>Japan · 2026</span>
+          <span>{profile.location} · {profile.year}</span>
         </div>
       </div>
     </aside>

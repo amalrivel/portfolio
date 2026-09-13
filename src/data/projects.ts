@@ -7,7 +7,9 @@ export type Project = {
   built: string[];
   stack: string[];
   status: string;
-  url?: string;
+  githubUrl: string;
+  demoUrl?: string;
+  screenshot?: { src: string; alt: string };
 };
 
 export const projects: Project[] = [
@@ -16,16 +18,18 @@ export const projects: Project[] = [
     title: "Genshu",
     category: "LMS for exam practice",
     description:
-      "A focused learning platform for practicing exam-style questions and reviewing mistakes.",
+      "A learning platform for Indonesian Asahi scholarship students to practice training exams and review mistakes.",
     problem:
-      "Students need a simple way to practice exam-style questions and understand where they can improve.",
+      "Exam preparation needs a structured way to practice, identify weak areas, and revisit incorrect answers.",
     built: [
-      "Practice runner",
-      "Admin tools",
+      "Exam-style practice runner",
+      "Practice and exam simulation",
+      "Incorrect-answer review",
       "Furigana support",
-      "Result review",
+      "Admin content management",
     ],
-    stack: ["React", "Express", "PostgreSQL"],
+    stack: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma"],
     status: "In development",
+    githubUrl: "https://github.com/amalrivel/genshu",
   },
 ];

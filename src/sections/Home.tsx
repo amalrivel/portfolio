@@ -1,18 +1,23 @@
 import { Label } from "../components/Label";
+import { profile } from "../data/profile";
 
 export function Home({ navigate }: { navigate: (id: string) => void }) {
   return (
     <section className="flex flex-col justify-center pt-4">
-      <Label>Home / Software developer</Label>
+      <Label>00 / Home</Label>
       <div className="mt-8 grid gap-12 lg:grid-cols-[1.1fr_0.9fr]">
         <div>
-          <h1 className="max-w-3xl text-6xl font-semibold leading-[0.9] tracking-[-0.08em] sm:text-8xl">
-            Practical software
-            <br />
-            for real problems.
+          <p className="mb-5 font-mono text-sm uppercase tracking-widest text-slate-600">
+            I'm
+          </p>
+          <h1 className="max-w-3xl text-7xl font-semibold uppercase leading-[0.86] tracking-[-0.09em] sm:text-9xl">
+            {profile.displayName}.
           </h1>
-          <p className="mt-8 max-w-md text-lg leading-7 text-slate-600">
-            I design and build clear, dependable products for the web.
+          <p className="mt-7 text-2xl font-medium tracking-[-0.04em] sm:text-4xl">
+            {profile.role}<br />based in {profile.location}.
+          </p>
+          <p className="mt-7 max-w-md text-base leading-7 text-slate-500 sm:text-lg">
+            I build practical software for real problems.
           </p>
           <div className="mt-10 flex flex-wrap gap-5 font-mono text-[10px] uppercase tracking-widest">
             <button
@@ -37,7 +42,7 @@ export function Home({ navigate }: { navigate: (id: string) => void }) {
         </div>
         <div className="border-l border-slate-300 pl-5 lg:mt-10">
           <Label>Currently building</Label>
-          <p className="mt-5 text-4xl font-semibold tracking-tight">● Genshu</p>
+          <p className="mt-5 text-4xl font-semibold tracking-tight">● {profile.currentlyBuilding}</p>
           <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-slate-500">
             LMS · React · Express · PostgreSQL
           </p>

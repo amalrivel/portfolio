@@ -1,4 +1,5 @@
 import type { NavigationSection } from "./Sidebar";
+import { profile } from "../data/profile";
 
 export function MobileHeader({
   sections,
@@ -19,7 +20,7 @@ export function MobileHeader({
           className="font-mono text-xs font-bold tracking-[0.2em]"
           onClick={() => navigate("home")}
         >
-          AMALRIVEL
+          {profile.brand}
         </button>
         <div className="flex flex-wrap justify-end gap-x-3 gap-y-2 font-mono text-[10px] uppercase tracking-widest text-slate-500 sm:gap-x-4">
           {sections.map((section) => (
