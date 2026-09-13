@@ -1,0 +1,148 @@
+{
+  "nodes": [
+    {
+      "id": "_codex_skills_graphify_skill_graphify_skill",
+      "label": "Graphify Skill",
+      "file_type": "document",
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "_codex_skills_graphify_skill_persistent_knowledge_graph",
+      "label": "Persistent Knowledge Graph",
+      "file_type": "concept",
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null,
+      "rationale": "Graphify preserves extracted relationships across sessions for queryable context."
+    },
+    {
+      "id": "_codex_skills_graphify_skill_ast_extraction",
+      "label": "AST Extraction",
+      "file_type": "concept",
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "_codex_skills_graphify_skill_semantic_extraction",
+      "label": "Semantic Extraction",
+      "file_type": "concept",
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "_codex_skills_graphify_skill_incremental_update",
+      "label": "Incremental Update",
+      "file_type": "concept",
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    },
+    {
+      "id": "_codex_skills_graphify_skill_graph_query",
+      "label": "Graph Query",
+      "file_type": "concept",
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "source_url": null,
+      "captured_at": null,
+      "author": null,
+      "contributor": null
+    }
+  ],
+  "edges": [
+    {
+      "source": "_codex_skills_graphify_skill_graphify_skill",
+      "target": "_codex_skills_graphify_skill_persistent_knowledge_graph",
+      "relation": "implements",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "_codex_skills_graphify_skill_graphify_skill",
+      "target": "_codex_skills_graphify_skill_ast_extraction",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "_codex_skills_graphify_skill_graphify_skill",
+      "target": "_codex_skills_graphify_skill_semantic_extraction",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "_codex_skills_graphify_skill_graphify_skill",
+      "target": "_codex_skills_graphify_skill_incremental_update",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "_codex_skills_graphify_skill_graphify_skill",
+      "target": "_codex_skills_graphify_skill_graph_query",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1
+    },
+    {
+      "source": "_codex_skills_graphify_skill_ast_extraction",
+      "target": "_codex_skills_graphify_skill_semantic_extraction",
+      "relation": "conceptually_related_to",
+      "confidence": "INFERRED",
+      "confidence_score": 0.85,
+      "source_file": ".codex/skills/graphify/SKILL.md",
+      "source_location": null,
+      "weight": 1
+    }
+  ],
+  "hyperedges": [
+    {
+      "id": "graphify_extraction_pipeline",
+      "label": "Graphify Extraction Pipeline",
+      "nodes": [
+        "_codex_skills_graphify_skill_ast_extraction",
+        "_codex_skills_graphify_skill_semantic_extraction",
+        "_codex_skills_graphify_skill_incremental_update"
+      ],
+      "relation": "form",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1,
+      "source_file": ".codex/skills/graphify/SKILL.md"
+    }
+  ]
+}
