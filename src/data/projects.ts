@@ -7,6 +7,7 @@ export type Project = {
   built: string[];
   stack: string[];
   status: string;
+  url?: string;
 };
 
 export const projects: Project[] = [
@@ -26,17 +27,5 @@ export const projects: Project[] = [
     ],
     stack: ["React", "Express", "PostgreSQL"],
     status: "In development",
-  },
-  {
-    number: "02",
-    title: "Project Two",
-    category: "A practical web tool",
-    description:
-      "A second case study placeholder for a product that helps people get useful work done.",
-    problem:
-      "Replace this with the user problem, constraint, or opportunity that shaped the project.",
-    built: ["Core workflow", "Responsive interface", "Useful defaults"],
-    stack: ["TypeScript", "Tailwind", "Node"],
-    status: "Completed",
   },
 ];
