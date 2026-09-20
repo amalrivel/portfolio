@@ -18,7 +18,7 @@ export function Work() {
             <div className="grid gap-5 lg:grid-cols-[10rem_1fr] lg:gap-12">
               <div className="font-mono text-[10px] uppercase leading-5 tracking-widest text-muted-foreground">
                 <p>Project {project.number}</p>
-                <p className="mt-2 max-w-[16ch]">{project.role}</p>
+                <p className="mt-2 lg:max-w-[16ch]">{project.role}</p>
                 <p className="mt-5 text-foreground">
                   Status · {project.status}
                 </p>
