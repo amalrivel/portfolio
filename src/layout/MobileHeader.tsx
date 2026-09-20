@@ -28,7 +28,7 @@ export function MobileHeader({
 
   return (
     <header
-      className="mobile-header border-b border-slate-300 px-5 py-2 lg:hidden"
+      className="mobile-header relative px-5 py-2 lg:hidden"
       onKeyDown={(event) => {
         if (event.key === "Escape" && open) {
           setOpen(false);
@@ -38,24 +38,26 @@ export function MobileHeader({
     >
       <Collapsible open={open} onOpenChange={setOpen}>
         <nav aria-label="Mobile navigation">
+          <Separator className="absolute bottom-0 left-0" />
           <div className="flex min-h-11 items-center justify-between gap-4">
             <Button
               variant="editorial-nav"
-              className="font-bold text-slate-900 tracking-[0.2em]"
+              className="font-bold text-foreground tracking-[0.2em]"
               onClick={() => select("home")}
               aria-label="Go to Home"
             >
               {profile.brand}
             </Button>
             <div className="flex min-w-0 items-center gap-3">
-              <span className="truncate font-mono text-[10px] uppercase tracking-widest text-slate-600">
+              <span className="truncate font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
                 {activeSection?.number} / {activeSection?.label}
               </span>
+              <Separator orientation="vertical" className="h-6" />
               <CollapsibleTrigger
                 render={
                   <Button
                     variant="editorial-nav"
-                    className="min-w-11 border-l border-slate-300 pl-3 text-[10px]"
+                    className="min-w-11 pl-3 text-[10px]"
                     ref={menuButtonRef}
                     aria-controls="mobile-navigation-menu"
                   />
@@ -79,14 +81,14 @@ export function MobileHeader({
                   ease: "easeOut",
                 }}
               >
-                <Separator className="bg-slate-300" />
+                <Separator />
                 <div className="py-2">
                   {sections.map((section) => (
                     <Button
                       variant="editorial-nav"
                       className={cn(
                         "w-full gap-3",
-                        activeId === section.id && "text-slate-900",
+                        activeId === section.id && "text-foreground",
                       )}
                       aria-current={
                         activeId === section.id ? "page" : undefined
@@ -94,7 +96,9 @@ export function MobileHeader({
                       onClick={() => select(section.id)}
                       key={section.id}
                     >
-                      <span className="text-slate-600">{section.number}</span>
+                      <span className="text-muted-foreground">
+                        {section.number}
+                      </span>
                       <span>{section.label}</span>
                     </Button>
                   ))}

@@ -13,6 +13,29 @@ dist-ssr
 *.local
 graphify-out/
 
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Terraform
+**/.terraform/*
+*.tfstate
+*.tfstate.*
+.terraform.tfstate.lock.info
+crash.log
+crash.*.log
+*.tfvars
+*.tfvars.json
+!terraform.tfvars.example
+*.tfplan
+*.plan
+tfplan
+override.tf
+override.tf.json
+*_override.tf
+*_override.tf.json
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

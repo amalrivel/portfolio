@@ -24,8 +24,13 @@ export function PortfolioShell({
   children: ReactNode;
 }) {
   return (
-    <div className="workspace-shell min-h-dvh bg-[#f8f7f2] text-[#1c2528]">
-      <Sidebar sections={sections} activeId={activeId} navigate={navigate} />
+    <div className="workspace-shell min-h-dvh bg-background text-foreground">
+      <Sidebar
+        sections={sections}
+        activeId={activeId}
+        navigate={navigate}
+        reduceMotion={reduceMotion}
+      />
       <MobileHeader
         key={activeId}
         sections={sections}

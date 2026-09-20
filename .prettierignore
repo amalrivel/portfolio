@@ -6,3 +6,4 @@ dist
 .agents
 .codex
 graphify-out
+infra/terraform/

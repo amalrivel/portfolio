@@ -13,9 +13,9 @@ export function SectionFrame({
     <section className="min-w-0 lg:pt-4">
       <div className="hidden items-center gap-4 lg:flex">
         <Label>{label}</Label>
-        <Separator className="flex-1 bg-slate-300" />
+        <Separator className="flex-1" />
       </div>
-      <div className="min-w-0 lg:mt-10">{children}</div>
+      <div className="min-w-0 lg:mt-12">{children}</div>
     </section>
   );
 }

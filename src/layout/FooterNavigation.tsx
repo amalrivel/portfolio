@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 export function FooterNavigation({
   activeIndex,
@@ -10,8 +11,9 @@ export function FooterNavigation({
   move: (offset: number) => void;
 }) {
   return (
-    <footer className="workspace-footer border-slate-300 px-3 py-1 sm:px-6">
-      <div className="flex w-full items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-widest text-slate-600">
+    <footer className="workspace-footer px-3 py-1 sm:px-6">
+      <Separator className="absolute top-0 left-0" />
+      <div className="flex w-full items-center justify-between gap-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
         <Button
           variant="editorial-nav"
           className="min-h-11 px-2 text-[10px] disabled:opacity-30"

@@ -10,29 +10,35 @@ export function Sidebar({
   sections,
   activeId,
   navigate,
+  reduceMotion,
 }: {
   sections: readonly NavigationSection[];
   activeId: string;
   navigate: (id: string) => void;
+  reduceMotion: boolean | null;
 }) {
   return (
-    <aside className="workspace-sidebar border-slate-300 px-5 py-5 sm:px-8 sm:py-7">
+    <aside className="workspace-sidebar px-5 py-5 sm:px-8 sm:py-7">
+      <Separator
+        orientation="vertical"
+        className="absolute top-0 right-0 hidden lg:block"
+      />
       <div className="flex h-full flex-col">
         <div className="flex items-center justify-between">
           <Button
             variant="editorial-nav"
-            className="font-bold text-slate-900 tracking-[0.2em]"
+            className="font-bold text-foreground tracking-[0.2em]"
             onClick={() => navigate("home")}
             aria-label="Go to Home"
           >
             {profile.brand}
           </Button>
-          <span className="font-mono text-[10px] text-slate-600">
+          <span className="font-mono text-[10px] text-muted-foreground">
             {profile.year}
           </span>
         </div>
         <div className="mt-16 hidden lg:block">
-          <p className="font-mono text-xs leading-5 text-slate-600">
+          <p className="font-mono text-xs leading-5 text-muted-foreground">
             ● Building
             <br />
             <span className="pl-3">{profile.currentlyBuilding}</span>
@@ -48,19 +54,22 @@ export function Sidebar({
                 variant="editorial-nav"
                 className={cn(
                   "group relative w-full gap-3 text-left",
-                  activeId === section.id && "text-slate-900",
+                  activeId === section.id && "text-foreground",
                 )}
                 aria-current={activeId === section.id ? "page" : undefined}
                 onClick={() => navigate(section.id)}
                 key={section.id}
               >
-                <span className="text-slate-600">{section.number}</span>
+                <span className="text-muted-foreground">{section.number}</span>
                 {section.label}
                 {activeId === section.id && (
                   <motion.span
                     layoutId="active-nav"
-                    className="absolute -left-3 h-3 w-1 bg-slate-900"
-                    transition={{ duration: 0.2 }}
+                    className="absolute -left-3 h-4 w-1 bg-foreground"
+                    transition={{
+                      duration: reduceMotion ? 0 : 0.18,
+                      ease: "easeOut",
+                    }}
                   />
                 )}
               </Button>
@@ -68,10 +77,10 @@ export function Sidebar({
           </div>
         </nav>
         <div className="mt-8 hidden lg:block">
-          <Separator className="bg-slate-300" />
-          <div className="flex items-center justify-between pt-2 font-mono text-[10px] uppercase tracking-widest text-slate-600">
+          <Separator />
+          <div className="flex items-center justify-between pt-2 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
             <a
-              className="flex min-h-11 items-center hover:text-slate-900"
+              className="flex min-h-11 items-center hover:text-foreground"
               href={profile.links.github}
               target="_blank"
               rel="noreferrer"

@@ -30,13 +30,3 @@ bun run build
 Vite produces a static `dist/` directory. Deployment target: AWS static hosting, with `index.html` as the root document. Sections use URL hashes and need no server routes.
 
 Production domain: https://amalrivel.com
-
-## Deployment
-
-Deployment target: AWS static hosting.
-
-```text
-main → GitHub Actions → S3 → CloudFront → amalrivel.com
-```
-
-See [docs/aws-deployment.md](docs/aws-deployment.md) for the one-time AWS and GitHub OIDC setup.
