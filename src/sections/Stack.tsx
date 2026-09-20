@@ -3,23 +3,23 @@ import { SectionFrame } from "../components/SectionFrame";
 const skillGroups = [
   {
     name: "Frontend",
-    skills: "React · TypeScript · Tailwind CSS · Motion",
-    description: "Component design, responsive UI, micro-interactions",
+    skills: "React · Next.js · React Router · Preact · TypeScript",
+    description: "Responsive interfaces and application flows",
   },
   {
-    name: "Backend",
-    skills: "Node.js · Express · REST APIs",
-    description: "Server architecture, API routes, middleware",
+    name: "Interface",
+    skills: "shadcn/ui · Tailwind CSS · Motion",
+    description: "Reusable components, styling, and interaction details",
   },
   {
     name: "Data",
-    skills: "PostgreSQL · Prisma ORM",
-    description: "Relational schema design, migrations, data queries",
+    skills: "PostgreSQL",
+    description: "Relational data for full-stack applications",
   },
   {
     name: "Workflow",
-    skills: "Git · GitHub · Linux · TypeScript",
-    description: "Version control, code quality, developer tooling",
+    skills: "Bun · Vite · Git · GitHub · Linux",
+    description: "Runtime, build tooling, and version control",
   },
 ];
 

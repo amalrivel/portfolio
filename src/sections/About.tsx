@@ -25,15 +25,14 @@ export function About() {
           </h1>
           <div className="mt-11 max-w-xl text-base leading-7 text-muted-foreground sm:text-lg sm:leading-8">
             <p>
-              I'm an Indonesian {profile.role.toLowerCase()} currently living in{" "}
-              {profile.location}. I enjoy turning problems I encounter into
-              clear, practical software. I care about understanding the
-              fundamentals, keeping systems maintainable, and learning by
-              building real products.
+              I'm an Indonesian software developer based in {profile.location}.
+              I turn real problems into practical software, with a focus on
+              clear interfaces, maintainable code, and learning by building real
+              products.
             </p>
             <p className="mt-6">
-              Genshu is one example: it started from a real need around exam
-              practice and gradually became a product I could design and build.
+              Genshu is one example: it grew from a real need for gentsuki exam
+              practice into an app I'm designing and building end to end.
             </p>
           </div>
         </div>
@@ -46,15 +45,15 @@ export function About() {
             <SpecItem label="Role" value={profile.role} />
             <SpecItem
               label="Location"
-              value={`Indonesia · Based in ${profile.location}`}
+              value={`Indonesian · Based in ${profile.location}`}
             />
             <SpecItem
               label="Engineering"
-              value="Practical utility, strong fundamentals, and maintainable systems."
+              value="Practical software, clear interfaces, and maintainable code."
             />
             <SpecItem
               label="Focus"
-              value="Exam practice systems and production web applications."
+              value="Practice-focused learning apps and full-stack web applications."
             />
           </SpecList>
         </aside>

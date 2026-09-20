@@ -42,10 +42,12 @@ export function Work() {
                   {project.stack.join(" · ")}
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-6">
-                  <EditorialLink href={project.githubUrl}>GitHub</EditorialLink>
+                  <EditorialLink href={project.githubUrl}>
+                    GitHub ↗
+                  </EditorialLink>
                   {project.liveUrl && (
                     <EditorialLink href={project.liveUrl}>
-                      Live demo
+                      Live demo ↗
                     </EditorialLink>
                   )}
                 </div>

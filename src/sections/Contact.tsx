@@ -17,8 +17,8 @@ export function Contact() {
             <em className="font-serif font-normal">something useful.</em>
           </h1>
           <p className="mt-8 max-w-md text-base leading-7 text-muted-foreground sm:text-lg">
-            Open to conversations about software architecture, engineering
-            roles, and new technical opportunities.
+            Open to Software Developer roles and practical product work in Japan
+            or with global remote teams.
           </p>
           <div className="mt-9 flex flex-wrap items-center gap-7">
             <EditorialLink href={`mailto:${profile.links.email}`}>
@@ -38,7 +38,7 @@ export function Contact() {
             <SpecItem label="Time zone" value="Japan Standard Time · UTC+9" />
             <SpecItem
               label="Availability"
-              value="Open to software projects and engineering opportunities."
+              value="Open to Software Developer roles and project opportunities."
             />
           </SpecList>
         </aside>

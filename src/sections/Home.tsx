@@ -25,7 +25,7 @@ export function Home({ navigate }: { navigate: (id: string) => void }) {
             based in {profile.location}.
           </p>
           <p className="mt-7 max-w-md text-base leading-7 text-muted-foreground sm:text-lg">
-            I build practical software for real problems.
+            I turn real problems into practical software.
           </p>
           <div className="mt-11">
             <Button variant="editorial-cta" onClick={() => navigate("work")}>
@@ -44,11 +44,11 @@ export function Home({ navigate }: { navigate: (id: string) => void }) {
               {profile.currentlyBuilding}
             </h2>
             <p className="mt-3 font-mono text-[10px] uppercase tracking-widest text-muted-foreground">
-              LMS · React · Express · PostgreSQL
+              Next.js · TypeScript · Bun · shadcn/ui
             </p>
             <p className="mt-7 max-w-xs text-sm leading-6 text-muted-foreground">
-              An exam practice workspace designed to make review feel focused
-              and useful for scholarship students.
+              A practice-focused learning app for Indonesian students preparing
+              for the Japanese gentsuki exam.
             </p>
           </div>
         </div>
