@@ -18,12 +18,21 @@ export function Work() {
             <div className="grid gap-5 lg:grid-cols-[10rem_1fr] lg:gap-12">
               <div className="font-mono text-[10px] uppercase leading-5 tracking-widest text-muted-foreground">
                 <p>Project {project.number}</p>
-                <p className="mt-2">{project.category}</p>
-                <p className="mt-5 text-foreground">● {project.status}</p>
+                <p className="mt-2 max-w-[16ch]">{project.role}</p>
+                <p className="mt-5 text-foreground">
+                  Status · {project.status}
+                </p>
               </div>
 
               <div>
-                <h2 className="text-4xl font-semibold uppercase leading-[0.9] tracking-[-0.055em] sm:text-6xl">
+                <h2
+                  className={cn(
+                    "font-semibold uppercase leading-[0.9] tracking-[-0.055em]",
+                    index === 0
+                      ? "text-5xl sm:text-7xl"
+                      : "text-4xl sm:text-6xl",
+                  )}
+                >
                   {project.title}
                 </h2>
                 <p className="mt-6 max-w-2xl text-lg leading-8 tracking-[-0.015em] text-muted-foreground sm:text-xl">
@@ -33,12 +42,10 @@ export function Work() {
                   {project.stack.join(" · ")}
                 </p>
                 <div className="mt-7 flex flex-wrap items-center gap-6">
-                  <EditorialLink href={project.githubUrl}>
-                    GitHub repository
-                  </EditorialLink>
+                  <EditorialLink href={project.githubUrl}>GitHub</EditorialLink>
                   {project.liveUrl && (
                     <EditorialLink href={project.liveUrl}>
-                      Live deployment
+                      Live demo
                     </EditorialLink>
                   )}
                 </div>

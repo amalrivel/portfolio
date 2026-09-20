@@ -1,7 +1,7 @@
 export type Project = {
   number: string;
   title: string;
-  category: string;
+  role: string;
   description: string;
   stack: string[];
   status: string;
@@ -13,21 +13,31 @@ export const projects: Project[] = [
   {
     number: "01",
     title: "Genshu",
-    category: "LMS for exam practice",
+    role: "End-to-end product development",
     description:
-      "A learning platform for Indonesian students in the Asahi scholarship program to practice exams and review mistakes.",
-    stack: ["React", "TypeScript", "Express", "PostgreSQL", "Prisma"],
+      "A learning platform for Indonesian students preparing for Japan's gentsuki examination.",
+    stack: ["Next.js", "TypeScript", "Bun", "PostgreSQL"],
     status: "In development",
     githubUrl: "https://github.com/amalrivel/genshu",
   },
   {
     number: "02",
-    title: "Amalrivel",
-    category: "Personal developer portfolio",
+    title: "Finori",
+    role: "Product design, frontend, backend, database",
     description:
-      "An editorial developer portfolio built around a focused, screen-based workspace with responsive navigation and accessible interactions.",
-    stack: ["React", "TypeScript", "Tailwind", "Motion"],
-    status: "In development",
-    githubUrl: "https://github.com/amalrivel/portfolio",
+      "A personal finance system for tracking everyday financial activity across multiple accounts.",
+    stack: ["React Router", "TypeScript", "PostgreSQL", "shadcn/ui"],
+    status: "MVP",
+    githubUrl: "https://github.com/amalrivel/finori",
+  },
+  {
+    number: "03",
+    title: "Gentsuki Ready",
+    role: "Design and frontend development",
+    description:
+      "A lightweight gentsuki exam-practice app with quiz interaction, furigana, explanations, and local progress.",
+    stack: ["Preact", "TypeScript", "Vite"],
+    status: "Live",
+    githubUrl: "https://github.com/amalrivel/gentsuki-ready",
   },
 ];
