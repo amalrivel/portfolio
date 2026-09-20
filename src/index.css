@@ -7,6 +7,7 @@
 
 :root {
   font-family: "Inter Variable", sans-serif;
+  font-feature-settings: "cv02", "cv03", "cv04", "cv11", "ss01";
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -21,12 +22,12 @@
   --secondary: oklch(0.94 0.01 90);
   --secondary-foreground: oklch(0.24 0.018 235);
   --muted: oklch(0.94 0.01 90);
-  --muted-foreground: oklch(0.48 0.018 235);
+  --muted-foreground: oklch(0.46 0.018 235);
   --accent: oklch(0.94 0.01 90);
   --accent-foreground: oklch(0.24 0.018 235);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.76 0.014 235);
-  --input: oklch(0.76 0.014 235);
+  --border: oklch(0.84 0.012 235);
+  --input: oklch(0.84 0.012 235);
   --ring: oklch(0.42 0.03 235);
   --chart-1: oklch(0.828 0.111 230.318);
   --chart-2: oklch(0.685 0.169 237.323);
@@ -88,17 +89,23 @@ a:focus-visible {
     height: 100dvh;
   }
   .workspace-sidebar {
-    grid-row: 1 / -1;
+    grid-column: 1;
+    grid-row: 1;
     position: relative;
   }
   .workspace-main {
+    grid-column: 2;
+    grid-row: 1;
     min-height: 0;
     overflow-y: auto;
     scrollbar-color: var(--border) transparent;
     scrollbar-width: thin;
   }
   .workspace-footer {
-    display: flex;
+    grid-column: 1 / -1;
+    grid-row: 2;
+    display: grid;
+    grid-template-columns: minmax(220px, 0.32fr) minmax(0, 1fr);
     align-items: center;
     justify-content: space-between;
     position: relative;
@@ -232,7 +239,16 @@ a:focus-visible {
 }
 
 @layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  .text-pretty {
+    text-wrap: pretty;
+  }
   .editorial-link {
-    @apply inline-flex min-h-11 items-center border-b border-border py-3 text-foreground transition-[border-color,color] duration-150 ease-out hover:border-foreground;
+    @apply inline-flex min-h-11 items-center font-mono text-[10px] uppercase tracking-widest text-muted-foreground transition-colors duration-150 ease-out hover:text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+  .skip-to-content {
+    @apply sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-50 focus:border focus:border-foreground focus:bg-background focus:px-4 focus:py-2 focus:font-mono focus:text-xs focus:uppercase focus:tracking-widest focus:text-foreground focus:outline-none focus:ring-2 focus:ring-ring;
   }
 }

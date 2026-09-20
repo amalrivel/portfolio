@@ -82,12 +82,12 @@ export function MobileHeader({
                 }}
               >
                 <Separator />
-                <div className="py-2">
+                <div className="flex flex-col py-2">
                   {sections.map((section) => (
                     <Button
                       variant="editorial-nav"
                       className={cn(
-                        "w-full gap-3",
+                        "w-full gap-3 text-left",
                         activeId === section.id && "text-foreground",
                       )}
                       aria-current={

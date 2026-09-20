@@ -25,19 +25,17 @@ export function PortfolioShell({
 }) {
   return (
     <div className="workspace-shell min-h-dvh bg-background text-foreground">
-      <Sidebar
-        sections={sections}
-        activeId={activeId}
-        navigate={navigate}
-        reduceMotion={reduceMotion}
-      />
+      <a href="#main-content" className="skip-to-content">
+        Skip to content
+      </a>
+      <Sidebar sections={sections} activeId={activeId} navigate={navigate} />
       <MobileHeader
-        key={activeId}
         sections={sections}
         activeId={activeId}
         navigate={navigate}
       />
       <main
+        id="main-content"
         className="workspace-main"
         ref={workspaceRef}
         tabIndex={-1}
@@ -45,7 +43,7 @@ export function PortfolioShell({
       >
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
-            className="workspace-screen mx-auto min-w-0 w-full max-w-[1200px] px-5 py-8 sm:px-8 sm:py-10"
+            className="workspace-screen mx-auto min-w-0 w-full max-w-[1200px] px-5 py-6 sm:px-8 sm:py-10 lg:px-12 lg:py-10"
             key={activeId}
             initial={{ opacity: 0, y: reduceMotion ? 0 : 8 }}
             animate={{ opacity: 1, y: 0 }}

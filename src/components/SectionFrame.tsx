@@ -10,12 +10,12 @@ export function SectionFrame({
   children: ReactNode;
 }) {
   return (
-    <section className="min-w-0 lg:pt-4">
-      <div className="hidden items-center gap-4 lg:flex">
+    <section className="min-w-0 pt-1 lg:pt-4">
+      <div className="flex items-center gap-4">
         <Label>{label}</Label>
         <Separator className="flex-1" />
       </div>
-      <div className="min-w-0 lg:mt-12">{children}</div>
+      <div className="mt-8 min-w-0 sm:mt-10 lg:mt-12">{children}</div>
     </section>
   );
 }
